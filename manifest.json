@@ -1,0 +1,42 @@
+{
+	"manifest_version": 2,
+	"name": "jb51广告去除",
+	"version": "0.0.1",
+	"description": "让你打开一个清爽的jb51网站",
+	"icons": {
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"background": {
+		"page": "background.html"
+	},
+	"browser_action":{
+		"default_icon": "img/icon.png",
+		"default_title": "除去jb51广告",
+		"default_popup": "background.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+        "http://www.jb51.net/*", 
+        "https://www.jb51.net/*"
+      ],
+			"js": ["js/jquery-1.8.3.js", "js/my-script.js"],
+			"run_at": "document_start"
+		}
+	],
+	"permissions": [
+		"contextMenus",
+		"tabs",
+		"notifications",
+		"webRequest",
+		"webRequestBlocking",
+		"storage",
+		"http://*/*",
+		"https://*/*"
+	],
+	"web_accessible_resources": ["js/inject.js"],
+	"homepage_url": "https://www.baidu.com",
+	"default_locale": "zh_CN"
+}
