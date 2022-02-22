@@ -47,6 +47,8 @@ function clearAdvertising() {
   $(".rjTestPos").remove();
   $(".soft_picc").remove();
   $(".mt10.rFixedBox").remove();
+  // 文章内的广告
+  $(".google-auto-placed .ap_container").remove();
   /* $(".main.clearfix").each((i, e) => {
     const flag = $(e).children().is(".mainlr");
     if (flag) {
